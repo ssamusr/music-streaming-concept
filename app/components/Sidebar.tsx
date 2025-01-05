@@ -36,17 +36,8 @@ const NAVLINKS = [
 
 export const Sidebar = () => {
   return (
-    <aside className='fixed left-0 top-0 mx-5 mt-5 flex h-screen w-14 flex-col items-center'>
-      {/* LOGO */}
-      <div className='mb-10'>
-        <Link to='/'>
-          <img
-            src='app/assets/images/logo.png'
-            alt='Logo'
-            className='h-8 w-8'
-          />
-        </Link>
-      </div>
+    <aside className='fixed left-0 mx-5 flex h-screen w-14 flex-col items-center'>
+      {/* NAV LINKS DESKTOP */}
       <div>
         <div className='mb-5 flex flex-col items-center gap-8 rounded-full bg-dark-alt px-4 py-6'>
           {NAVLINKS.map((link) => (
@@ -63,6 +54,7 @@ export const Sidebar = () => {
             </NavLink>
           ))}
         </div>
+        {/* PERSONAL LINKS DESKTOP */}
         <div className='flex flex-col items-center gap-8 rounded-full bg-dark-alt px-4 py-6'>
           <NavLink
             to='/profile'

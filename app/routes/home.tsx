@@ -1,5 +1,7 @@
-import { Sidebar } from '~/components/Sidebar'
 import type { Route } from './+types/home'
+import { Sidebar } from '~/components/Sidebar'
+import { SearchInput } from '~/components/SearchInput'
+import { Header } from '~/components/Header'
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -15,6 +17,7 @@ export function meta({}: Route.MetaArgs) {
 export default function Home() {
   return (
     <>
+      <Header />
       <Sidebar />
     </>
   )
