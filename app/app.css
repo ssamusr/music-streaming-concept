@@ -6,3 +6,23 @@ html,
 body {
   @apply bg-dark;
 }
+
+.navlink-active {
+  @apply font-bold text-primary;
+}
+
+.navlink-active span:last-child {
+  @apply text-white;
+}
+
+.navlink-inactive {
+  @apply text-light/25;
+}
+
+.navlink-inactive:hover {
+  @apply hover:text-primary;
+}
+
+.navlink-inactive:hover span:last-child {
+  @apply text-white;
+}

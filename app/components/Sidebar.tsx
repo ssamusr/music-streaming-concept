@@ -1,3 +1,4 @@
+import { NavLink } from 'react-router'
 import { Link } from 'react-router'
 import { HomeIcon } from '~/assets/icons/HomeIcon'
 import { LogoutIcon } from '~/assets/icons/LogoutIcon'
@@ -16,19 +17,19 @@ const NAVLINKS = [
   {
     id: 2,
     name: 'Playlist',
-    path: '/',
+    path: '/playlist',
     icon: <PlaylistIcon className='h-6 w-6' />,
   },
   {
     id: 3,
     name: 'Radio',
-    path: '/',
+    path: '/radio',
     icon: <RadioIcon className='h-6 w-6' />,
   },
   {
     id: 4,
     name: 'Video',
-    path: '/',
+    path: '/video',
     icon: <VideoIcon className='h-6 w-6' />,
   },
 ]
@@ -49,36 +50,46 @@ export const Sidebar = () => {
       <div>
         <div className='mb-5 flex flex-col items-center gap-8 rounded-full bg-dark-alt px-4 py-6'>
           {NAVLINKS.map((link) => (
-            <Link
+            <NavLink
               to={link.path}
               key={link.id}
-              className='text-light/25 hover:text-primary'
+              className={({ isActive }) =>
+                isActive ? 'navlink-active' : 'navlink-inactive'
+              }
             >
               <span>{link.icon}</span>
 
               <span className='block sm:hidden'>{link.name}</span>
-            </Link>
+            </NavLink>
           ))}
         </div>
         <div className='flex flex-col items-center gap-8 rounded-full bg-dark-alt px-4 py-6'>
-          <Link
-            to='/'
-            className='flex items-center gap-x-2 text-light/25 hover:text-primary'
+          <NavLink
+            to='/profile'
+            className={({ isActive }) =>
+              isActive
+                ? 'navlink-active flex items-center gap-x-2'
+                : 'navlink-inactive flex items-center gap-x-2'
+            }
           >
             <span>
               <ProfileIcon className='h-6 w-6' />
             </span>
             <span className='block sm:hidden'>Profile</span>
-          </Link>
-          <Link
-            to='/'
-            className='flex items-center gap-x-2 text-light/25 hover:text-primary'
+          </NavLink>
+          <NavLink
+            to='/logout'
+            className={({ isActive }) =>
+              isActive
+                ? 'navlink-active flex items-center gap-x-2'
+                : 'navlink-inactive flex items-center gap-x-2'
+            }
           >
             <span>
               <LogoutIcon className='h-6 w-6' />
             </span>
             <span className='block sm:hidden'>Log Out</span>
-          </Link>
+          </NavLink>
         </div>
       </div>
     </aside>
