@@ -2,6 +2,8 @@ import type { Route } from './+types/home'
 import { Sidebar } from '~/components/Sidebar'
 import { SearchInput } from '~/components/SearchInput'
 import { Header } from '~/components/Header'
+import { HeartIcon } from '~/assets/icons/HeartIcon'
+import { Hero } from '~/components/Hero'
 
 export function meta({}: Route.MetaArgs) {
   return [
@@ -19,6 +21,9 @@ export default function Home() {
     <>
       <Header />
       <Sidebar />
+      <main className='ml-24 pr-16'>
+        <Hero />
+      </main>
     </>
   )
 }

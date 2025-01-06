@@ -22,6 +22,9 @@ export default {
         light: '#EFEEE0',
         primary: '#FACD66',
       },
+      backgroundImage: {
+        'hero-pattern': "url('/app/assets/images/Hero.png')",
+      },
     },
   },
   plugins: [],
